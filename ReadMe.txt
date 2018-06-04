@@ -24,7 +24,7 @@ Things to do,
 - Update to allow for paramiters in command line
 - Clean up openssl.exe tested
 - Add more options
-- Add mroe comments
+- Add more comments
 
 
 

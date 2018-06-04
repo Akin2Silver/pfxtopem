@@ -18,7 +18,9 @@ Write-output "Please Browse to PFX file"
 $cert = Get-FileName "$exedir"
 
 Write-output "Please enter password for you PFX" 
-$pfxpass = read-host
+$SecurePassword = Read-Host -Prompt "Enter PFX password" -AsSecureString 
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
+$pfxpass = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR) 
 
 #system setup stuff
 $date = Get-date -Format "yyyMMdd"
